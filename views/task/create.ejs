@@ -1,0 +1,35 @@
+<form action="/task/create" method="POST">
+    <div class="form-group">
+        <label>Заголовок:</label>
+        <input type="text" class="form-control" name="title" value="">
+        <br>
+    </div>
+    <div class="form-group">
+        <label>Описание</label>
+        <textarea class="form-control" name="description" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Исполнитель</label>        
+        <select class="form-control" name="performer">
+            <% _.each(data.performers, function (user) { %>
+            <option value="<%= user.id %>"><%= user.userName %></option>
+            <% }) %>            
+        </select>                            
+        <br>
+    </div>   
+    <div class="form-group">
+        <label>Дедлайн:</label>
+        <input type="text" class="form-control" name="endDate" value="">
+        <br>
+    </div>  
+    <div class="form-group">
+        <label>Статус заявки:</label>
+        <select class="form-control" name="status">
+            <% _.each(data.statuses, function (status) { %>
+            <option value="<%= status.id %>"><%= status.title %></option>
+            <% }) %>
+        </select>
+    </div> 
+    
+    <button type="submit" class="btn btn-default">Отправить</button>
+</form>

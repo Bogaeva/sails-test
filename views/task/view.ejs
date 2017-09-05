@@ -1,0 +1,30 @@
+<form action="#" method="POST">
+    <div class="form-group">
+        <label>Заголовок:</label>
+        <input type="text" class="form-control" name="title" value="<%= task.title %>">
+        <br>
+    </div>
+    <div class="form-group">
+        <label>Описание</label>
+        <textarea class="form-control" name="description" rows="3"><%= task.description %></textarea>
+    </div>
+    <div class="form-group">
+        <label>Исполнитель</label>        
+        <input type="text" class="form-control" name="userName" value="<%= task.performer.userName %>">        
+        <br>
+    </div>   
+    <div class="form-group">
+        <label>Дедлайн:</label>
+        <input type="text" class="form-control" name="endDate" value="<%= task.endData %>">
+        <br>
+    </div>  
+    <div class="form-group">
+        <label>Статус заявки:</label>
+        <input type="text" class="form-control" name="status" value="<%= task.status.title %>">           
+        <br>
+    </div>  
+    
+    <a href="/task" class="btn">Назад</a>   
+
+    
+</form>
